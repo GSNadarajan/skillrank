@@ -3,7 +3,7 @@ frontend:
     build:
       commands:
         - mkdir -p $CODEBUILD_SRC_DIR/static
-        - cp -R app $CODEBUILD_SRC_DIR/static
+        - cp -R app $CODEBUILD_SRC_DIR/static/public
   artifacts:
     baseDirectory: static
     files:
