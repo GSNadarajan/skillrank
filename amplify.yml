@@ -1,15 +1,13 @@
-version: 0.1
 frontend:
   phases:
-    preBuild:
-      commands:
-        - echo "Prebuild step is not needed"
     build:
       commands:
-        - echo "Build step is not needed"
+        - mkdir -p $CODEBUILD_SRC_DIR/static
+        - cp -R app $CODEBUILD_SRC_DIR/static
   artifacts:
-    baseDirectory: static/public  
+    baseDirectory: static
     files:
       - '**/*'
   cache:
-    paths: []
+    paths:
+      - 'node_modules/**/*'
